@@ -1,4 +1,6 @@
-import { add, sub, divi, multi } from 'compute';
+var logModule = require('./compute');
+
+
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement
@@ -30,7 +32,7 @@ class Calculator {
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
   }
-
+  
   compute() {
     let computation
     const prev = parseFloat(this.previousOperand)
@@ -38,16 +40,16 @@ class Calculator {
     if (isNaN(prev) || isNaN(current)) return
     switch (this.operation) {
         case '+':
-        computation = add(prev , current)
-        break          
+          computation = logModule.add(prev , current)
+        break        
       case '-':
-        computation = sub(prev , current)
+        computation = logModule.sub(prev , current)
         break
       case '*':
-        computation = divi(prev , current)
+        computation = logModule.divi(prev , current)
         break
       case '÷':
-        computation = multi(prev , current)
+        computation = logModule.multi(prev , current)
         break
       default:
         return

@@ -1,16 +1,18 @@
-export function add(x , y) {
+function add(x , y) {
     return x + y;
 }
 
-export function sub(x , y) {
+ function sub(x , y) {
     return x - y;
 }
 
-export function multi(x , y) {
+ function multi(x , y) {
     return x * y;
 }
 
 
-export function divi(x , y) {
+ function divi(x , y) {
     return x / y;
 }
+
+module.exports = {add, sub, multi, divi }
