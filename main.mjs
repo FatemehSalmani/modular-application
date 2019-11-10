@@ -1,5 +1,8 @@
-var logModule = require('./compute');
-
+import sum from './sum.mjs'
+import minus from './minus.mjs'
+import multiply from './multiply.mjs'
+import divide from './divide.mjs'
+//import {add, sub, multi, divi} from './compute.mjs/index.js';
 
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
@@ -40,16 +43,16 @@ class Calculator {
     if (isNaN(prev) || isNaN(current)) return
     switch (this.operation) {
         case '+':
-          computation = logModule.add(prev , current)
+          computation = sum(prev , current)
         break        
       case '-':
-        computation = logModule.sub(prev , current)
+        computation = minus(prev , current)
         break
       case '*':
-        computation = logModule.divi(prev , current)
+        computation = divide(prev , current)
         break
       case '÷':
-        computation = logModule.multi(prev , current)
+        computation = multiply(prev , current)
         break
       default:
         return
