@@ -2,7 +2,6 @@ import sum from './sum.mjs'
 import minus from './minus.mjs'
 import multiply from './multiply.mjs'
 import divide from './divide.mjs'
-//import {add, sub, multi, divi} from './compute.mjs/index.js';
 
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
@@ -49,10 +48,10 @@ class Calculator {
         computation = minus(prev , current)
         break
       case '*':
-        computation = divide(prev , current)
+        computation = multiply(prev , current)
         break
       case '÷':
-        computation = multiply(prev , current)
+        computation = divide(prev , current)
         break
       default:
         return
