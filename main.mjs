@@ -1,9 +1,4 @@
-import sum from './sum.mjs'
-import minus from './minus.mjs'
-import multiply from './multiply.mjs'
-import divide from './divide.mjs'
-//import {add, sub, multi, divi} from './compute.mjs/index.js';
-
+import * as fnc from './functios/function.mjs'
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement
@@ -12,54 +7,60 @@ class Calculator {
   }
 
   clear() {
-    this.currentOperand = ''
+    return fnc.clear(this.currentOperand,this.previousOperand, this.operation)
+    /*this.currentOperand = ''
     this.previousOperand = ''
-    this.operation = undefined
+    this.operation = undefined*/
   }
 
   delete() {
-    this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    return fnc.deleted(this.currentOperand)
+    //this.currentOperand = this.currentOperand.toString().slice(0, -1)
   }
 
-  appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.')) return
-    this.currentOperand = this.currentOperand.toString() + number.toString()
-  }
-
-  chooseOperation(operation) {
-    if (this.currentOperand === '') return
+  appendNumber(number){
+    return fnc.append(number , this.current-operand);
+  /*appendNumber(number) {
+   // if (number === '.' && this.currentOperand.includes('.')) return
+   // this.currentOperand = this.currentOperand.toString() + number.toString()
+  }*/
+ }
+  chooseOperation(operation){
+    return fnc.choose(operation,this.currentOperand , this.previousOperand)
+   /* if (this.currentOperand === '') return
     if (this.previousOperand !== '') {
       this.compute()
     }
     this.operation = operation
     this.previousOperand = this.currentOperand
-    this.currentOperand = ''
+    this.currentOperand = ''*/
   }
   
   compute() {
-    let computation
+    return fnc.compute(this.operation , this.currentOperand , this.previousOperand)
+   /* let computation
     const prev = parseFloat(this.previousOperand)
     const current = parseFloat(this.currentOperand)
     if (isNaN(prev) || isNaN(current)) return
     switch (this.operation) {
         case '+':
-          computation = sum(prev , current)
+          computation = calc.sum(prev , current)
         break        
       case '-':
-        computation = minus(prev , current)
+        computation = calc.minus(prev , current)
         break
       case '*':
-        computation = divide(prev , current)
+        computation = calc.multiply(prev , current)
         break
       case '÷':
-        computation = multiply(prev , current)
+        computation =  calc.divide(prev , current)
         break
       default:
         return
     }
     this.currentOperand = computation
     this.operation = undefined
-    this.previousOperand = ''
+    this.previousOperand = ''*/
   }
 
   getDisplayNumber(number) {

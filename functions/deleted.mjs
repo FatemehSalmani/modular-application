@@ -1,0 +1,1 @@
+export default(currentOperand)=>{currentOperand = currentOperand.toString().slice(0, -1)}
