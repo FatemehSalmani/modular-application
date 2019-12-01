@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-import * as fnc from './functios/function.mjs'
-=======
-import sum from './sum.mjs'
-import minus from './minus.mjs'
-import multiply from './multiply.mjs'
-import divide from './divide.mjs'
 
->>>>>>> d71f0c67941f0ba8668226d957db6fba1ef0847c
+import * as fnc from './functios/function.mjs'
+
+
+
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement
@@ -58,17 +54,14 @@ class Calculator {
         computation = calc.minus(prev , current)
         break
       case '*':
-<<<<<<< HEAD
         computation = calc.multiply(prev , current)
         break
       case '÷':
         computation =  calc.divide(prev , current)
-=======
         computation = multiply(prev , current)
         break
       case '÷':
         computation = divide(prev , current)
->>>>>>> d71f0c67941f0ba8668226d957db6fba1ef0847c
         break
       default:
         return
